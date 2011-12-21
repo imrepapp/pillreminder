@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:title="@string/settings_title">
+	<CheckBoxPreference
+		android:key="alarm_enable"
+		android:title="@string/settings_alarm_enable_title"
+		android:summary="@string/settings_alarm_enable_summary"
+		android:defaultValue="false"
+		/>
+	<EditTextPreference
+		android:key="remain_amount"
+		android:title="@string/settings_pill_remain_amount_title"
+		android:summary="@string/settings_pill_remain_amount_summary"
+		android:defaultValue="0"
+		/>
+	<EditTextPreference
+		android:key="use_amount"
+		android:title="@string/settings_pill_use_amount_title"
+		android:summary="@string/settings_pill_use_amount_summary"
+		android:defaultValue="50"
+		android:dependency="remain_amount"
+		/>
+	<hu.creapp.android.preference.TimePickerPreference
+		android:key="alarm_time"
+		android:title="@string/settings_alarm_time_title"
+		android:summary="@string/settings_alarm_time_summary"
+		android:dependency="alarm_enable"
+		/>
+	<hu.creapp.android.preference.MultiSelectListPreference
+		android:key="alarm_days"
+		android:title="@string/settings_alarm_days_title"
+		android:summary="@string/settings_alarm_days_summary"
+		android:entries="@array/alarm_days"
+		android:entryValues="@array/alarm_days_values"
+		android:dependency="alarm_enable"
+		/>
+	<RingtonePreference
+		android:key="alarm_ringtone"
+		android:title="@string/settings_alarm_ringtone_title"
+		android:showDefault="true"
+		android:ringtoneType="notification|alarm"
+		/>
+</PreferenceScreen>

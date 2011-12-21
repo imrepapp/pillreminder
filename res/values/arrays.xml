@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="alarm_days">
+		<item>Hetfo</item>
+		<item>Kedd</item>
+		<item>Szerda</item>
+		<item>Csutortok</item>
+		<item>Pentek</item>
+		<item>Szombat</item>
+		<item>Vasarnap</item>
+	</string-array>
+	<string-array name="alarm_days_values">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+		<item>0</item>
+	</string-array>
+	<integer-array name="alarm_day_value_pair">
+		<item>6</item>
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+	</integer-array>
+</resources>

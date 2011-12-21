@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">PillReminder</string>
+
+	<string name="saved_time">Beallitott ido</string>
+	<string name="saved_days">Beallitott napok</string>
+
+	<string name="settings_title">Beallitasok</string>
+	<string name="settings_alarm_enable_title">Jelzes</string>
+	<string name="settings_alarm_enable_summary">Kikapcsolt allapotban nem jelez az alkalmazas</string>
+	<string name="settings_alarm_days_title">Jelzes napjai</string>
+	<string name="settings_alarm_days_summary">A beallitott napokon kap jelzest</string>
+	<string name="settings_alarm_time_title">Jelzes idopontja</string>
+	<string name="settings_alarm_time_summary">A beallitott idopontban kap jelzest</string>
+	<string name="settings_alarm_ringtone_title">Jelzes csengohangja</string>
+	<string name="settings_pill_remain_amount_title">Gyogyszer mennyiseg</string>
+	<string name="settings_pill_remain_amount_summary">Rendelkezesre allo faktorok</string>
+	<string name="settings_pill_use_amount_title">Egyszeri mennyiseg</string>
+	<string name="settings_pill_use_amount_summary">Egyszer felhasznalt dozis</string>
+
+	<string name="menu_settings">Beallitasok</string>
+	<string name="menu_addfactor">Uj adag felvitele</string>
+
+	<string name="value_na">Nincs rendelkezesre allo adat</string>
+
+	<string name="button_pill_yes">Rendben, bevettem</string>
+	<string name="button_pill_no">Figyelmeztess kesobb</string>
+	<string name="button_addpill_yes">Hozzaad</string>
+	<string name="button_addpill_no">Megsem</string>
+
+	<string name="please_take_pills">A gyogyszert legyszives vedd be!</string>
+
+	<string name="title_pill_dialog">FIGYELEM!</string>
+	<string name="title_addpill_dialog">Uj adag</string>
+</resources>
