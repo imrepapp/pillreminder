@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.TextView;
 
 public class HomeActivity extends Activity{
@@ -14,9 +15,12 @@ public class HomeActivity extends Activity{
 		t.setText(PillReminderApp.usercfg.getTimeStr());
 		t = (TextView)findViewById(R.id.days_value);
 		t.setText(PillReminderApp.usercfg.getDaysStr(", "));
+		t = (TextView)findViewById(R.id.amount_value);
+		t.setText(PillReminderApp.usercfg.getRemainAmountStr());
 	}
 	@Override
 	public void onCreate(Bundle savedInstanceState){
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 	}

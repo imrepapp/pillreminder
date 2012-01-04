@@ -1,35 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">PillReminder</string>
+	<string name="app_name">1utt</string>
 
-	<string name="saved_time">Beallitott ido</string>
-	<string name="saved_days">Beallitott napok</string>
+	<string name="saved_time">Faktor beadásának időpontja</string>
+	<string name="saved_days">Faktor beadásának napja(i)</string>
+	<string name="remain_amount">Rendelkezésre álló faktorok száma</string>
 
-	<string name="settings_title">Beallitasok</string>
-	<string name="settings_alarm_enable_title">Jelzes</string>
-	<string name="settings_alarm_enable_summary">Kikapcsolt allapotban nem jelez az alkalmazas</string>
-	<string name="settings_alarm_days_title">Jelzes napjai</string>
-	<string name="settings_alarm_days_summary">A beallitott napokon kap jelzest</string>
-	<string name="settings_alarm_time_title">Jelzes idopontja</string>
-	<string name="settings_alarm_time_summary">A beallitott idopontban kap jelzest</string>
-	<string name="settings_alarm_ringtone_title">Jelzes csengohangja</string>
-	<string name="settings_pill_remain_amount_title">Gyogyszer mennyiseg</string>
-	<string name="settings_pill_remain_amount_summary">Rendelkezesre allo faktorok</string>
-	<string name="settings_pill_use_amount_title">Egyszeri mennyiseg</string>
-	<string name="settings_pill_use_amount_summary">Egyszer felhasznalt dozis</string>
+	<string name="settings_title">Beállítások</string>
+	<string name="settings_alarm_enable_title">Jelzés</string>
+	<string name="settings_alarm_enable_summary">Kikapcsolt állapotban nem jelez az alkalmazás.</string>
+	<string name="settings_alarm_days_title">Faktor beadásának napja(i)</string>
+	<string name="settings_alarm_days_summary">Ezeken a napokon adod be a faktort</string>
+	<string name="settings_alarm_time_title">Faktor beadásának időpontja</string>
+	<string name="settings_alarm_time_summary">Ekkor adod be a faktort</string>
+	<string name="settings_alarm_ringtone_title">Jelzés csengőhangja</string>
+	<string name="settings_pill_remain_amount_title">Rendelkezésre álló faktorok száma</string>
+	<string name="settings_pill_remain_amount_summary"></string>
+	<string name="settings_pill_use_amount_title">Egyszeri faktor-mennyiség</string>
+	<string name="settings_pill_use_amount_summary">Ennyi faktort adsz be egy alkalommal</string>
 
-	<string name="menu_settings">Beallitasok</string>
-	<string name="menu_addfactor">Uj adag felvitele</string>
+	<string name="menu_settings">Beállítások</string>
+	<string name="menu_addfactor">Új faktorok száma</string>
 
-	<string name="value_na">Nincs rendelkezesre allo adat</string>
+	<string name="value_na">Nincs rendelkezésre állo adat</string>
 
-	<string name="button_pill_yes">Rendben, bevettem</string>
-	<string name="button_pill_no">Figyelmeztess kesobb</string>
-	<string name="button_addpill_yes">Hozzaad</string>
-	<string name="button_addpill_no">Megsem</string>
+	<string name="button_pill_yes">OK, Bevettem!</string>
+	<string name="button_pill_no">Majd később!</string>
+	<string name="button_addpill_yes">Hozzáad</string>
+	<string name="button_addpill_no">Mégsem</string>
 
-	<string name="please_take_pills">A gyogyszert legyszives vedd be!</string>
+	<string name="please_take_pills">Most kellene beadnod a faktorod!</string>
 
-	<string name="title_pill_dialog">FIGYELEM!</string>
-	<string name="title_addpill_dialog">Uj adag</string>
+	<string name="title_pill_dialog">Fogytán vannak a faktorjaid, ne felejts el újat kérni!</string>
+	<string name="title_addpill_dialog">Új adag</string>
 </resources>
