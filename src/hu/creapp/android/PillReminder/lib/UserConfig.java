@@ -11,7 +11,7 @@ import hu.creapp.android.PillReminder.R;
 import hu.creapp.android.preference.MultiSelectListPreference;
 
 public class UserConfig {
-	private boolean notifyEnable = false;
+	private boolean notifyEnable = true;
 	private int[] notifyDays = {0,0,0,0,0,0,0};
 	private Time nextNotifyTime = new Time();
 	private Context context;
@@ -28,13 +28,23 @@ public class UserConfig {
 
 
 	public void setNotifyEnable(){
-		this.notifyEnable = this.settings.getBoolean("alarm_enable", false);
+		this.notifyEnable = this.settings.getBoolean("alarm_enable", true);
 	}
 	public void setRemainAmount(){
-		this.remainAmount = Integer.parseInt(this.settings.getString("remain_amount", "0"));
+		this.remainAmount = Integer.valueOf(this.settings.getString("remain_amount", "0"));
+		if ( this.remainAmount <= 0 ){
+			this.notifyEnable = false;
+		} else {
+			this.setNotifyEnable();
+		}
 	}
 	public void setUseAmount(){
 		this.useAmount = Integer.parseInt(this.settings.getString("use_amount", "0"));
+		if ( this.useAmount <= 0 ){
+			this.notifyEnable = false;
+		} else {
+			this.setNotifyEnable();
+		}
 	}
 	public void setAlarmTime(){
 		int weekday = -1;
@@ -44,38 +54,36 @@ public class UserConfig {
 		String[] days;
 		Time currentTime = new Time();
 
-		if ( this.notifyEnable && this.useAmount > 0 ) {
-			currentTime.setToNow();
+		currentTime.setToNow();
 
-			tmpStr = this.settings.getString("alarm_time", "8:00");
-			hour = Integer.valueOf(tmpStr.split(":")[0]);
-			min = Integer.valueOf(tmpStr.split(":")[1]);
+		tmpStr = this.settings.getString("alarm_time", "8:00");
+		hour = Integer.valueOf(tmpStr.split(":")[0]);
+		min = Integer.valueOf(tmpStr.split(":")[1]);
 
-			days = MultiSelectListPreference.parseStoredValue(this.settings.getString("alarm_days", ""));
+		days = MultiSelectListPreference.parseStoredValue(this.settings.getString("alarm_days", ""));
 
-			for(int i = 0; i < this.notifyDays.length ; i++){ this.notifyDays[i] = 0; }
-			if(days.length>0){
-				for(String value : days){ this.notifyDays[Integer.parseInt(value)] = 1; }
+		for(int i = 0; i < this.notifyDays.length ; i++){ this.notifyDays[i] = 0; }
+		if(days != null && days.length>0){
+			for(String value : days){ this.notifyDays[Integer.parseInt(value)] = 1; }
 
-				int i = currentTime.weekDay;
-				while( i != (currentTime.weekDay-1)){
-					if( this.notifyDays[i] == 1 ){
-						weekday = i;
-						break;
-					}
-					if((i+1) == this.notifyDays.length){
-						i = 0;
-					} else {
-						i++;
-					}
+			int i = currentTime.weekDay;
+			while( i != (currentTime.weekDay-1)){
+				if( this.notifyDays[i] == 1 ){
+					weekday = i;
+					break;
+				}
+				if((i+1) == this.notifyDays.length){
+					i = 0;
+				} else {
+					i++;
 				}
 			}
-			if (weekday < 0) {
-				this.notifyEnable = false;
-			}
-
-			this.nextNotifyTime.set(0, min, hour, (currentTime.monthDay + (weekday - currentTime.weekDay)), currentTime.month, currentTime.year);
 		}
+		if (weekday < 0) {
+			this.notifyEnable = false;
+		}
+
+		this.nextNotifyTime.set(0, min, hour, (currentTime.monthDay + (weekday - currentTime.weekDay)), currentTime.month, currentTime.year);
 	}
 
 	public void setAlarmRingtone(){
@@ -111,16 +119,14 @@ public class UserConfig {
 		}
 		return this.nextNotifyTime.toMillis(true);
 	}
+	public String getRemainAmountStr(){
+		return Integer.toString(this.remainAmount);
+	}
 	public String getTimeStr(){
-		if (!this.notifyEnable)
-			return "-";
-
 		return this.nextNotifyTime.format("%H:%M");
 	}
 	public String getDaysStr(String delimiter){
-		if (!this.notifyEnable){
-			return "-";
-		}
+		System.out.println("ixcDEBUG: getdaystr ->"+this.notifyEnable);
 
 		String[] daysStr = this.context.getResources().getStringArray(R.array.alarm_days);
 		int[] daysIdx = this.context.getResources().getIntArray(R.array.alarm_day_value_pair);
@@ -148,10 +154,14 @@ public class UserConfig {
 	}
 	public void takePill(){
 		this.remainAmount -= useAmount;
+		if (this.remainAmount < 0)
+			this.remainAmount = 0;
 		this.settings.edit().putString("remain_amount", ""+this.remainAmount).commit();
 	}
 	public void addPill(int dose){
 		this.remainAmount += dose;
+		if (this.remainAmount > 999999999)
+			this.remainAmount = 999999999;
 		this.settings.edit().putString("remain_amount", ""+this.remainAmount).commit();
 	}
 }

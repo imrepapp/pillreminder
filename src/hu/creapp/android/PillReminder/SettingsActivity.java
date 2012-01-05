@@ -7,6 +7,7 @@ import android.preference.EditTextPreference;
 import android.text.method.DigitsKeyListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 public class SettingsActivity extends PreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 	@Override
@@ -14,11 +15,8 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
 		EditTextPreference tmpEditBox;
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.preferences);
-
-		tmpEditBox = (EditTextPreference) this.findPreference("remain_amount");
-		tmpEditBox.getEditText().setKeyListener(DigitsKeyListener.getInstance(false,true));
-		tmpEditBox = (EditTextPreference) this.findPreference("use_amount");
-		tmpEditBox.getEditText().setKeyListener(DigitsKeyListener.getInstance(false,true));
+		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
+		settings.edit().putBoolean("first_run", false).commit();
 	}
 
 	@Override

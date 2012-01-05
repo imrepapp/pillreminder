@@ -39,15 +39,6 @@
 			style="@style/main_value"
 			android:id="@+id/amount_value"
 			/>
-		<TextView
-			android:layout_marginTop="20dip"
-			style="@style/main_label"
-			android:text="@string/reminder_status"
-			/>
-		<TextView
-			style="@style/main_value"
-			android:id="@+id/status_value"
-			/>
 	</LinearLayout>
 	<ImageView
 		android:src="@drawable/footer"

@@ -6,7 +6,7 @@
 		android:key="alarm_enable"
 		android:title="@string/settings_alarm_enable_title"
 		android:summary="@string/settings_alarm_enable_summary"
-		android:defaultValue="false"
+		android:defaultValue="true"
 		/>
 	<EditTextPreference
 		android:key="remain_amount"
