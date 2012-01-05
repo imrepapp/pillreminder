@@ -34,6 +34,6 @@
 
 	<string name="please_take_pills">Most kellene beadnod a faktorod!</string>
 
-	<string name="title_pill_dialog">Fogytán vannak a faktorjaid, ne felejts el újat kérni!</string>
+	<string name="title_pill_dialog">Fogytán vannak a faktorjaid,\nne felejts el újat kérni!</string>
 	<string name="title_addpill_dialog">Új adag</string>
 </resources>

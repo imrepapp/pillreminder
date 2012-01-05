@@ -15,9 +15,14 @@ public class PillDialog extends LockScreenDialog {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		Button button;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dialog_pillremind);
+	}
+
+	@Override
+	public void onResume(){
+		Button button;
+		super.onResume();
 
 		button = (Button) findViewById(R.id.positive_button);
 		button.setOnClickListener(new View.OnClickListener() { public void onClick(View v) {
@@ -40,7 +45,6 @@ public class PillDialog extends LockScreenDialog {
 
 		} });
 	}
-
 	@Override
 	public void onDestroy(){
 		super.onDestroy();
