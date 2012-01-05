@@ -13,19 +13,26 @@
 		android:title="@string/settings_pill_remain_amount_title"
 		android:summary="@string/settings_pill_remain_amount_summary"
 		android:defaultValue="0"
+		android:numeric="integer"
+		android:inputType="number"
+		android:maxLength="9"
 		/>
 	<EditTextPreference
 		android:key="use_amount"
 		android:title="@string/settings_pill_use_amount_title"
 		android:summary="@string/settings_pill_use_amount_summary"
-		android:defaultValue="50"
+		android:defaultValue="0"
 		android:dependency="remain_amount"
+		android:numeric="integer"
+		android:inputType="number"
+		android:maxLength="9"
 		/>
 	<hu.creapp.android.preference.TimePickerPreference
 		android:key="alarm_time"
 		android:title="@string/settings_alarm_time_title"
 		android:summary="@string/settings_alarm_time_summary"
 		android:dependency="alarm_enable"
+		android:defaultValue="08:00"
 		/>
 	<hu.creapp.android.preference.MultiSelectListPreference
 		android:key="alarm_days"
@@ -34,11 +41,13 @@
 		android:entries="@array/alarm_days"
 		android:entryValues="@array/alarm_days_values"
 		android:dependency="alarm_enable"
+		android:defaultValue=""
 		/>
 	<RingtonePreference
 		android:key="alarm_ringtone"
 		android:title="@string/settings_alarm_ringtone_title"
 		android:showDefault="true"
 		android:ringtoneType="notification|alarm"
+		android:defaultValue="content://settings/system/notification_sound"
 		/>
 </PreferenceScreen>

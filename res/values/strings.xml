@@ -5,6 +5,9 @@
 	<string name="saved_time">Faktor beadásának időpontja</string>
 	<string name="saved_days">Faktor beadásának napja(i)</string>
 	<string name="remain_amount">Rendelkezésre álló faktorok száma</string>
+	<string name="reminder_status">Jelenleg a jelzes</string>
+	<string name="active">Bekapcsolva</string>
+	<string name="inactive">Kikapcsolva</string>
 
 	<string name="settings_title">Beállítások</string>
 	<string name="settings_alarm_enable_title">Jelzés</string>
