@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="alarm_days">
-		<item>Hétfő</item>
+		<item>Hetfo</item>
 		<item>Kedd</item>
 		<item>Szerda</item>
-		<item>Csütörtök</item>
-		<item>Péntek</item>
+		<item>Csutortok</item>
+		<item>Pentek</item>
 		<item>Szombat</item>
-		<item>Vasárnap</item>
+		<item>Vasarnap</item>
 	</string-array>
 	<string-array name="alarm_days_values">
 		<item>1</item>

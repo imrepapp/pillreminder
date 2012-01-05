@@ -111,9 +111,6 @@ public class UserConfig {
 		}
 		return this.nextNotifyTime.toMillis(true);
 	}
-	public String getRemainAmountStr(){
-		return Integer.toString(this.remainAmount);
-	}
 	public String getTimeStr(){
 		if (!this.notifyEnable)
 			return "-";
