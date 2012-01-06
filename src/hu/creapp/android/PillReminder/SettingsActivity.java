@@ -28,6 +28,7 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
 	@Override
 	public void onPause(){
 		super.onPause();
+		PillReminderApp.usercfg.setAlarmRingtone();
 		getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
 	}
 
@@ -40,12 +41,15 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
 	}
 
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,String key){
+		System.out.println("ixcDEBUG sharedprefchange: "+key);
 		if (key.equals("alarm_enable"))
 			PillReminderApp.usercfg.setNotifyEnable();
 		if (key.equals("remain_amount"))
 			PillReminderApp.usercfg.setRemainAmount();
 		if (key.equals("use_amount"))
 			PillReminderApp.usercfg.setUseAmount();
+		if (key.equals("runout_days"))
+			PillReminderApp.usercfg.setRunOutDays();
 		if (key.equals("alarm_time"))
 			PillReminderApp.usercfg.setAlarmTime();
 		if (key.equals("alarm_days"))

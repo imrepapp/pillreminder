@@ -26,11 +26,14 @@ public class LockScreenDialog extends Activity {
 
 		try{
 			mMediaPlayer = new MediaPlayer();
-			mMediaPlayer.setDataSource(getApplicationContext(), PillReminderApp.usercfg.getRingtoneUri());
+			mMediaPlayer.setDataSource(getBaseContext(), PillReminderApp.usercfg.getRingtoneUri());
 			mMediaPlayer.prepare();
 			mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+			mMediaPlayer.setLooping(true);
 			mMediaPlayer.start();
-		}catch(Exception e) {}
+		}catch(Exception e) {
+			System.out.println("ixcDEBUG asdasd:"+e);
+		}
 
 	}
 

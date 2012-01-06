@@ -18,6 +18,7 @@ public class UserConfig {
 	private Uri ringtone;
 	private int remainAmount;
 	private int useAmount;
+	private int runOutDays;
 	private SharedPreferences settings;
 
 	public UserConfig(Context context) {
@@ -45,6 +46,9 @@ public class UserConfig {
 		} else {
 			this.setNotifyEnable();
 		}
+	}
+	public void setRunOutDays(){
+		this.runOutDays = Integer.parseInt(this.settings.getString("runout_days", "6"));
 	}
 	public void setAlarmTime(){
 		int weekday = -1;
@@ -81,6 +85,8 @@ public class UserConfig {
 		}
 		if (weekday < 0) {
 			this.notifyEnable = false;
+		} else {
+			this.setNotifyEnable();
 		}
 
 		this.nextNotifyTime.set(0, min, hour, (currentTime.monthDay + (weekday - currentTime.weekDay)), currentTime.month, currentTime.year);
@@ -100,6 +106,7 @@ public class UserConfig {
 		this.setUseAmount();
 		this.setAlarmTime();
 		this.setAlarmRingtone();
+		this.setRunOutDays();
 	}
 
 	public boolean isEnable(){
@@ -163,5 +170,14 @@ public class UserConfig {
 		if (this.remainAmount > 999999999)
 			this.remainAmount = 999999999;
 		this.settings.edit().putString("remain_amount", ""+this.remainAmount).commit();
+	}
+	public boolean isOutPill(){
+		System.out.println("ixcDEBUG: isoutpill "+this.notifyEnable);
+		if (!this.notifyEnable)
+			return false;
+		System.out.println("ixcDEBUG: setalarmringtone 2 "+ this.remainAmount + " "+this.runOutDays+" "+this.useAmount);
+		if ( (this.remainAmount - this.runOutDays*this.useAmount) <= 0)
+			return true;
+		return false;
 	}
 }

@@ -41,14 +41,12 @@
 
 		<activity
 			android:name=".AddFactorDialog"
-			android:theme="@android:style/Theme.Dialog"
-			android:label="@string/title_addpill_dialog"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar"
 			android:excludeFromRecents="true" />
 
 		<activity
 			android:name=".PillDialog"
-			android:theme="@android:style/Theme.Dialog"
-			android:label="@string/title_pill_dialog"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar"
 			android:excludeFromRecents="true" />
 
 	</application>

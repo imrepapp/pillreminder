@@ -50,4 +50,14 @@
 		android:ringtoneType="notification|alarm"
 		android:defaultValue="content://settings/system/notification_sound"
 		/>
+	<EditTextPreference
+		android:key="runout_days"
+		android:title="@string/settings_pill_runout_amount"
+		android:summary="@string/settings_pill_runout_amount_summary"
+		android:defaultValue="6"
+		android:dependency="remain_amount"
+		android:numeric="integer"
+		android:inputType="number"
+		android:maxLength="2"
+		/>
 </PreferenceScreen>
